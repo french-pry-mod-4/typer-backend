@@ -11,7 +11,9 @@ Game.destroy_all
 Passage.destroy_all
 
 50.times do
-  Passage.create(text: Faker::Quotes::Shakespeare.hamlet_quote, language: "English", skill_level: 1, time_alloted: 1)
+  # joining aray of strings
+  text = Faker::Lorem.paragraphs(number: 30).join()      
+  Passage.create(text: text, language: "English", skill_level: 1, time_alloted: 1)
 end
 
 
