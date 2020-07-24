@@ -1,4 +1,4 @@
 class GameSerializer < ActiveModel::Serializer
-  has_many :passages
-  attributes :id, :userId, :passageId, :speed, :accuracy
+  belongs_to :passage
+  attributes :id, :user_id, :passage_id, :speed, :accuracy
 end
