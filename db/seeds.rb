@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Game.destroy_all
+Passage.destroy_all
+
+50.times do
+  Passage.create(text: Faker::Quotes::Shakespeare.hamlet_quote, language: "English", skill_level: 1, time_alloted: 1)
+end
+
+
+u1 = User.create(username: "Elisheva", password: "1234")
+u2 = User.create(username: "Dina", password: "1234")
+
+# g1 = Game.create(userId: id, passageId: 1, speed: 0, accuracy: 0)
