@@ -23,5 +23,11 @@ class GamesController < ApplicationController
   
   end
 
+  def update
+    game = Game.find(params[:id])
+    game.update(speed: params[:speed], accuracy: params[:accuracy], played: true)
+    render json: game
+  end
+
   
 end

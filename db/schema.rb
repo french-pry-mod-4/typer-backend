@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 2020_07_23_224206) do
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "passage_id"
-    t.integer "speed"
-    t.integer "accuracy"
+    t.float "speed"
+    t.float "accuracy"
+    t.boolean "played", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_224206) do
     t.text "text"
     t.string "language"
     t.integer "skill_level"
-    t.integer "time_alloted"
+    t.integer "time_allotted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,8 +3,9 @@ class CreateGames < ActiveRecord::Migration[6.0]
     create_table :games do |t|
       t.integer :user_id
       t.integer :passage_id
-      t.integer :speed
-      t.integer :accuracy
+      t.float :speed
+      t.float :accuracy
+      t.boolean :played, :default => false
 
       t.timestamps
     end
