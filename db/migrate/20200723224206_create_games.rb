@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.integer :passage_id
       t.float :speed
       t.float :accuracy
+      t.boolean :played, :default => false
 
       t.timestamps
     end
