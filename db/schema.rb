@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_224206) do
     t.integer "passage_id"
     t.float "speed"
     t.float "accuracy"
+    t.boolean "played", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
