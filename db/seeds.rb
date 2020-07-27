@@ -13,7 +13,7 @@ Passage.destroy_all
 50.times do
   # joining aray of strings
   text = Faker::Lorem.paragraphs(number: 30).join()      
-  Passage.create(text: text, language: "English", skill_level: 1, time_alloted: 1)
+  Passage.create(text: text, language: "English", skill_level: 1, time_allotted: 60)
 end
 
 
