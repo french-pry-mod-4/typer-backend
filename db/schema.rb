@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_07_23_224206) do
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "passage_id"
-    t.integer "speed"
-    t.integer "accuracy"
+    t.float "speed"
+    t.float "accuracy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
