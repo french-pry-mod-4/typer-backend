@@ -6,9 +6,15 @@ class UsersController < ApplicationController
   #   render json: users
   # end
 
-  # def create
-  #   user = User.new(user_params)
-  # end
+  #signup
+  def create
+    user = User.create(user_params)
+    if user.valid?
+      render json: user, serializer: SignupSerializer
+    else 
+      render json: user.errors.full_messages
+    end
+  end
 
   def show
     # user = User.find(params)
@@ -18,5 +24,8 @@ class UsersController < ApplicationController
     
   end
 
+  def user_params
+    params.permit(:username, :password)
+  end
 
 end
