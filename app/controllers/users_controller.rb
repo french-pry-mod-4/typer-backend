@@ -9,7 +9,11 @@ class UsersController < ApplicationController
   #signup
   def create
     user = User.create(user_params)
-    render json: user, serializer: SignupSerializer
+    if user.valid?
+      render json: user, serializer: SignupSerializer
+    else 
+      render json: user.errors.full_messages
+    end
   end
 
   def show
