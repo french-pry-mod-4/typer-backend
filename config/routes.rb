@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :show, :create, :update]
   resources :passages, only: [:index]
 
+  get 'login', to: 'users#login', as: 'login'
 end
