@@ -1,8 +1,10 @@
 class GamesController < ApplicationController
 
   def index
-    games = Game.all
-
+    # games = Game.all
+    # limit = (params[:limit] || 10).to_i
+    games = Game.where("speed IS NOT NULL").order("speed DESC", "accuracy DESC").limit(10) # speed: :desc, accuracy: :desc
+    
     render json: games
   end
 
