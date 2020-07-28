@@ -6,7 +6,7 @@ class GamesController < ApplicationController
     # top 10 fastest
     games = accurate_games.where("speed IS NOT NULL").order("speed DESC", "accuracy DESC").limit(10) # speed: :desc, accuracy: :desc
     
-    render json: games
+    render json: games, each_serializer: ScoreSerializer
   end
 
   def show
