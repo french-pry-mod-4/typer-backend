@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   #   render json: users
   # end
 
+  #signup
   def create
     user = User.create(user_params)
-    render json: user
+    render json: user, serializer: SignupSerializer
   end
 
   def show
