@@ -16,12 +16,17 @@ class UsersController < ApplicationController
     end
   end
 
+  # login
+  # def login
+
+  #   user = User.find_by(user_id: params[:user_id], password: params[:password])
+  #   byebug
+  # end
+
   def show
     # user = User.find(params)
-    user = User.first # hardcoding in first user
+    user = User.all # hardcoding in first user
     render json: user
-
-    
   end
 
   def user_params
