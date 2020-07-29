@@ -4,7 +4,7 @@ class CreatePassages < ActiveRecord::Migration[6.0]
       t.text :text
       t.string :language
       t.integer :skill_level
-      t.integer :time_alloted
+      t.integer :time_allotted
 
       t.timestamps
     end
