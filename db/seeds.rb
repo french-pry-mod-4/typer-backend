@@ -70,8 +70,8 @@ end
 
 
 
-u1 = User.create(username: "Elisheva", password: "1234")
-u2 = User.create(username: "Dina", password: "1234")
+u1 = User.create(username: "Elisheva", password_digest: "1234")
+u2 = User.create(username: "Dina", password_digest: "1234")
 
 # seeding some games for the leadeboard
 # p2 = Passage.first
@@ -80,3 +80,5 @@ g2 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 40, accuracy: 81)
 g3 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 26, accuracy: 67.42)
 g4 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 30, accuracy: 86.45)
 g5 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 30, accuracy: 82.3)
+g6 = Game.create(user_id: u1.id, passage_id: p1.id, speed: 36, accuracy: 91)
+
