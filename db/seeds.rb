@@ -16,11 +16,7 @@ The Dursleys had everything they wanted, but they also had a secret, and their g
 
 When Mr. and Mrs. Dursley woke up on the dull, gray Tuesday our story starts, there was nothing about the cloudy sky outside to suggest that strange and mysterious things would soon be happening all over the country. Mr. Dursley hummed as he picked out his most boring tie for work, and Mrs. Dursley gossiped away happily as she wrestled a screaming Dudley into his high chair.
 
-None of them noticed a large, tawny owl flutter past the window.
-
-At half past eight, Mr. Dursley picked up his briefcase, pecked Mrs. Dursley on the cheek, and tried to kiss Dudley good-bye but missed, because Dudley was now having a tantrum and throwing his cereal at the walls. \"Little tyke,\" chortled Mr. Dursley as he left the house. He got into his car and backed out of number four's drive.
-
-It was on the corner of the street that he noticed the first sign of something peculiar -- a cat reading a map. For a second, Mr. Dursley didn't realize what he had seen -- then he jerked his head around to look again. There was a tabby cat standing on the corner of Privet Drive, but there wasn't a map in sight. What could he have been thinking of? It must have been a trick of the light. Mr. Dursley blinked and stared at the cat. It stared back. As Mr. Dursley drove around the corner and up the road, he watched the cat in his mirror. It was now reading the sign that said Privet Drive -- no, looking at the sign; cats couldn't read maps or signs. Mr. Dursley gave himself a little shake and put the cat out of his mind. As he drove toward town he thought of nothing except a large order of drills he was hoping to get that day.}
+None of them noticed a large, tawny owl flutter past the window.}
 
 macbeth_solil = %q{Is this a dagger which I see before me,
 The handle toward my hand? Come, let me clutch thee.
@@ -74,8 +70,8 @@ end
 
 
 
-u1 = User.create(username: "Elisheva", password: "1234")
-u2 = User.create(username: "Dina", password: "1234")
+u1 = User.create(username: "Elisheva", password_digest: "1234")
+u2 = User.create(username: "Dina", password_digest: "1234")
 
 # seeding some games for the leadeboard
 # p2 = Passage.first
@@ -84,3 +80,5 @@ g2 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 40, accuracy: 81)
 g3 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 26, accuracy: 67.42)
 g4 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 30, accuracy: 86.45)
 g5 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 30, accuracy: 82.3)
+g6 = Game.create(user_id: u1.id, passage_id: p1.id, speed: 36, accuracy: 91)
+
