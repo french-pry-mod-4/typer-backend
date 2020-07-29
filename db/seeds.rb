@@ -70,8 +70,8 @@ end
 
 
 
-u1 = User.create(username: "Elisheva", password_digest: "1234")
-u2 = User.create(username: "Dina", password_digest: "1234")
+u1 = User.create(username: "Elisheva", password: "1234")
+u2 = User.create(username: "Dina", password: "1234")
 
 # seeding some games for the leadeboard
 # p2 = Passage.first
