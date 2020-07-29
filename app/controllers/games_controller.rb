@@ -5,7 +5,7 @@ class GamesController < ApplicationController
     accurate_games = Game.where("accuracy >= ?", 80)
     # top 10 fastest
     games = accurate_games.where("speed IS NOT NULL").order("speed DESC", "accuracy DESC").limit(10) # speed: :desc, accuracy: :desc
-    
+
     render json: games, each_serializer: ScoreSerializer
   end
 
@@ -17,13 +17,13 @@ class GamesController < ApplicationController
 
 
   def create
-    #hardcoding in the user for now - 
+    #hardcoding in the user for now -
     user_id = User.first.id
     # find a random passage
     # passage_id = Passage.pluck(:id).sample
-    game = Game.create(user_id: user_id, passage_id: params[:passage_id]) #speed: params[:speed], accuracy: params[:accuracy], 
+    game = Game.create(user_id: user_id, passage_id: params[:passage_id]) #speed: params[:speed], accuracy: params[:accuracy],
     render json: game
-  
+
   end
 
   def update
@@ -32,5 +32,11 @@ class GamesController < ApplicationController
     render json: game
   end
 
-  
+  def destroy
+    game = Game.find(params[:id])
+    game.destroy
+    render json: game
+  end
+
+
 end
