@@ -2,12 +2,6 @@ class UsersController < ApplicationController
 
   skip_before_action :authorized, only: [:create, :login]
 
-  # def index
-  #   users = User.all
-
-  #   render json: users
-  # end
-
   #signup
   def create
     
@@ -46,13 +40,6 @@ class UsersController < ApplicationController
 
     render json: { message: "Successfully Logged Out"}
   end
-
-  # def show
-  #   # user = User.find(params)
-  #   user = User.all # hardcoding in first user
-  #   # user = User.find_by(id: session[:user_id])
-  #   render json: @current_user, serializer: UserGameSerializer
-  # end
 
   def user_params
     params.permit(:username, :password)
