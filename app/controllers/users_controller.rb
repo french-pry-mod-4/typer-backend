@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def logout
     session.delete(:user_id)
 
-    render json: { message: "Logged Out"}
+    render json: { message: "Successfully Logged Out"}
   end
 
   # def show
