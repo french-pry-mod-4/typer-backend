@@ -10,8 +10,12 @@ class PassagesController < ApplicationController
 
   def create
     passage = Passage.create(passage_params) 
+    if passage.valid?
     # byebug
-    render json: passage
+      render json: passage
+    else 
+      render json: { messages: passage.errors.full_messages}, status: :bad_request
+    end
   end
 end
 
