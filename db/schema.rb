@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2020_07_28_213125) do
   create_table "passages", force: :cascade do |t|
     t.text "text"
     t.string "language"
-    t.integer "skill_level"
-    t.integer "time_allotted"
+    t.integer "skill_level", default: 2
+    t.integer "time_allotted", default: 60
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"

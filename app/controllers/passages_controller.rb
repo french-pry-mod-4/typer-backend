@@ -7,4 +7,14 @@ class PassagesController < ApplicationController
 
     render json: passages
   end
+
+  def create
+    passage = Passage.create(passage_params) 
+    # byebug
+    render json: passage
+  end
+end
+
+def passage_params
+  params.permit(:text, :language, :skill_level, :time_allotted, :name)
 end
