@@ -56,10 +56,12 @@ Gregor then turned to look out the window at the dull weather. Drops of rain cou
 
 "Oh, God", he thought, "what a strenuous career it is that I've chosen! Travelling day in and day out. Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell!" He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder.}
 
+demo = %q{Hunt and peck (two-fingered typing), also known as Eagle Finger, is a common form of typing in which the typist presses each key individually. Instead of relying on the memorized position of keys, the typist must find each key by sight. Use of this method may also prevent the typist from being able to see what has been typed without glancing away from the keys. Although good accuracy may be achieved, any typing errors that are made may not be noticed immediately due to the user not looking at the screen. There is also the disadvantage that because fewer fingers are used, those that are used are forced to move a much greater distance.
+}
 p1 = Passage.create(text: metamorphosis, name: "The Metamorphosis", language: "English", skill_level: 2, time_allotted: 60)
 p2 = Passage.create(text: hp_text, name: "Harry Potter", language: "English", skill_level: 2, time_allotted: 60)
 p3 = Passage.create(text: macbeth_solil, name: "Macbeth Soliloquy", language: "English", skill_level: 3, time_allotted: 60)
-# p4 = Passage.create(text: declaration_text, name: "Declaration of Independence", language: "English", skill_level: 2, time_allotted: 60)
+p4 = Passage.create(text: demo, name: "Demo (short)", language: "English", skill_level: 2, time_allotted: 30)
 
 
 50.times do
@@ -72,13 +74,14 @@ end
 
 u1 = User.create(username: "Elisheva", password: "1234")
 u2 = User.create(username: "Dina", password: "1234")
+u3 = User.create(username: "react4life", password: "1234")
 
 # seeding some games for the leadeboard
 # p2 = Passage.first
-g1 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 35, accuracy: 93)
-g2 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 40, accuracy: 81)
+g1 = Game.create(user_id: u1.id, passage_id: p2.id, speed: 35, accuracy: 93)
+g2 = Game.create(user_id: u2.id, passage_id: p1.id, speed: 40, accuracy: 81)
 g3 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 26, accuracy: 67.42)
-g4 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 30, accuracy: 86.45)
-g5 = Game.create(user_id: u2.id, passage_id: p2.id, speed: 30, accuracy: 82.3)
-g6 = Game.create(user_id: u1.id, passage_id: p1.id, speed: 36, accuracy: 91)
+g4 = Game.create(user_id: u1.id, passage_id: p1.id, speed: 30, accuracy: 86.45)
+g5 = Game.create(user_id: u3.id, passage_id: p2.id, speed: 30, accuracy: 82.3)
+g6 = Game.create(user_id: u3.id, passage_id: p3.id, speed: 36, accuracy: 91)
 
